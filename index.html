@@ -1,60 +1,194 @@
----
-layout: default
-title: P&aacute;gina Inicial
-cover: false
-about: 'about.html'
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Sérgio Freitas - Developer</title>
+</head>
+<body>
+    <div class="grid-2">
+        <div class="section-1">
+            <i class="fas fa-code fa-5x white"></i>
+            <h2>Sérgio Freitas</h2>
+            <p>Porto Alegre, Brazil.</p>
+            <a target="_blank" href="https://www.linkedin.com/in/sergiosgfreitas"><i class="fab fa-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/sergiofreitas"><i class="fab fa-github"></i></a>
+            <a target="_blank" href="./resume.pdf"><i class="fa fa-file-pdf"></i></a>
+        </div>
+        <div class="section-2">
+            <h2>About</h2>
+            <p>I am a FullStack developer with more than ten years of experience in a variety of technologies including Javascript, PHP, Laravel, Node.js, angular and react.In these ten years of work, I have had the opportunity to develop a range of projects that involve: mobile applications, ecommerces, blog systems, webmail system, websites and management systems. I am a self-motivated and proactive entrepreneur who loves new challenges.</p>
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://www.closegap.org/" target="_blank">
+                        <strong>Closegap</strong>
+                        <span>A web application to help teachers, counselors and school social workers to support the emotional wellbeing of students.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://prizey.app" target="_blank">
+                        <strong>Prizey App</strong>
+                        <span>A tap to win game made mobile and desktop.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://centroauditivo.com.br/" target="_blank">
+                        <strong>Centro Auditivo</strong>
+                        <span>Website of a group of hearing professionals with over 35 years in the market in Brazil.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://humanizarrh.com.br/" target="_blank">
+                        <strong>Humanizar RH</strong>
+                        <span>Human resources company.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cortel.com.br/" target="_blank">
+                        <strong>Grupo Cortel</strong>
+                        <span>National leader in the cemetery and crematorium segment since 1963.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://agencianoz.com/" target="_blank">
+                        <strong>Agencia NOZ</strong>
+                        <span>A digital agency company.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://massadundun.com.br/en/" target="_blank">
+                        <strong>Massa DunDun</strong>
+                        <span>Website of a new product that is the evolution of regular mortar.</span>
+                    </a>
+                </li>
 
-<header class="site-head" {% if page.cover %} style="background-image: url({{ page.cover }})"{% endif %}>
-    <div class="vertical">
-        <div class="site-head-content" class="inner">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-            <h1 class="blog-title">{{ site.name }}</h1>
-            <h2 class="blog-description"> 
-                {{ site.description }}. 
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> Mais sobre mim </a> {% endif %}
-            </h2>
+                <li>
+                    <a href="http://grupoext.com.br/" target="_blank">
+                        <strong>Grupo EXT</strong>
+                        <span>An event booth building company.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://barceloseperez.com.br/" target="_blank">
+                        <strong>Barcelos e Perez Advogados</strong>
+                        <span>Law firm</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul>
+                <li class="app">
+                    <div class="info">
+                        <strong>Grêmio Official App</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=net.gremiofbpa&hl=pt_BR">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://itunes.apple.com/br/app/gr%C3%AAmio-fbpa-oficial/id1057689942?mt=8">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Internacional Official App</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.interapp">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://itunes.apple.com/br/app/s-c-internacional-oficial/id1273559378?mt=8">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Flamengo Official App</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=br.com.sportv.times.flamengo&hl=en">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/br/app/flamengo/id482135622">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Corinthians Official App</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=br.com.sportv.times.corinthians&hl=en">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/br/app/corinthians-oficial/id482582173">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Uhuu</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.uhuuapp&hl=en">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/br/app/uhuu/id1314946791">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Rede de Convenios GBOEX</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.noz.gboex&hl=en">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/br/app/gboex-rede-de-conv%C3%AAnios/id971346953">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="app">
+                    <div class="info">
+                        <strong>Noite dos Museus</strong>
+                        <span>Android and ios app made for one of the teams of Serie A of Brazilian football</span>
+                    </div>
+                    <div class="stores">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.noz.noitemuseu&hl=en">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/br/app/noite-dos-museus/id1111223026">
+                            <i class="fab fa-app-store-ios"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <h2>Contact</h2>
+            <p>sergio.sgfreitas@gmail.com</p>
         </div>
     </div>
-</header>
-
-<main class="content" role="main">
-
-    {% for post in paginator.posts %}
-
-    <article class="post">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> {{!tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-
-        </header>
-        <section class="post-excerpt">
-            {{ post.excerpt }}
-        </section>
-    </article>
-
-    {% endfor %}
-
-    <nav class="pagination" role="pagination">
-
-        {% if paginator.previous_page %}
-          {% if paginator.previous_page == 1 %}
-          <a class="newer-posts" href="/" title="Previous Page">&laquo; Posts novos</a>
-          {% else %}
-          <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Posts novos</a>
-          {% endif %}
-        {% endif %}
-
-        <span class="page-number"> Page {{paginator.page}} de {{paginator.total_pages}} </span>
-        
-        {% if paginator.next_page %} 
-        <a class="older-posts" href="/page{{ paginator.next_page }}/" title="Next Page">Posts velhos &raquo;</a>
-        {% endif %} 
-    </nav>
-    
-
-</main>
+</body>
+</html>
