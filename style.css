@@ -59,7 +59,8 @@ a{
 .section-2 p{
     font-size: 1.1rem;
     padding-bottom: 10px;
-    margin:0;
+    line-height: 1.4em;
+    margin: 0;
 }
 
 .section-2 ul {
