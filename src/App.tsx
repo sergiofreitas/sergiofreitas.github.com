@@ -3,10 +3,34 @@ import "@fontsource-variable/dm-sans";
 import { Link } from "./components/link";
 import { Card } from "./components/card";
 import { Laptop, ServerCog, TabletSmartphone, Users } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Expandable } from "./components/expandable";
+import { useState } from "react";
+
+const works = [
+  {
+    title: "Marketplace de venda de ingressos integrados",
+    category: "Confidencial (NDA)",
+    src: "/avatar.jpg",
+    children: (
+      <p className="text-sm pt-2 leading-relaxed">
+        Desenvolvimento de um marketplace robusto e altamente integrado,
+        projetado para conectar bancos a empresas de venda de ingressos, como
+        ticketeiras, clubes, teatros e empresas de eventos. O grande diferencial
+        era sua operação discreta e eficiente, atuando de forma invisível ao
+        cliente final, garantindo uma experiência fluida sem a necessidade de
+        sair do ambiente do canal de venda. Com uma integração perfeita e
+        operação em segundo plano, o sistema oferecia alta performance e
+        confiabilidade, maximizando a eficiência dos processos de venda.
+      </p>
+    ),
+  },
+];
 
 function App() {
   const startedYear = 2006;
   const currentYear = new Date().getFullYear();
+  const [contentId, setContentId] = useState<number | undefined>(undefined);
 
   return (
     <div className="container mx-auto antialiased">
@@ -135,57 +159,84 @@ function App() {
             Alguns cases de sucesso
           </h3>
 
-          <div className="grid grid-cols-1 gap-4">
-            <Card>
-              <h4 className="text-xl font-bold font-serif">
-                Marketplace de venda de ingressos integrados
-              </h4>
-              <span className="text-xs text-zinc-500">Confidencial (NDA)</span>
-              <p className="text-sm pt-2 leading-tight">
-                Desenvolvimento de um marketplace robusto e altamente integrado,
-                projetado para conectar bancos a empresas de venda de ingressos,
-                como ticketeiras, clubes, teatros e empresas de eventos. O
-                grande diferencial era sua operação discreta e eficiente,
-                atuando de forma invisível ao cliente final, garantindo uma
-                experiência fluida sem a necessidade de sair do ambiente do
-                canal de venda. Com uma integração perfeita e operação em
-                segundo plano, o sistema oferecia alta performance e
-                confiabilidade, maximizando a eficiência dos processos de venda.
-              </p>
-            </Card>
+          <AnimatePresence>
+            <div className="grid grid-cols-1 gap-4">
+              {works.map((work, idx) => (
+                <motion.div
+                  className="relative overflow-hidden rounded-xl border"
+                  layoutId={`card-container-${idx}`}
+                  onClick={() => setContentId(idx)}
+                >
+                  <motion.div
+                    className="card-image-container relative hover:scale-110"
+                    layoutId={`card-image-container-${idx}`}
+                  >
+                    <img
+                      className="aspect-square object-fit"
+                      src={work.src}
+                      alt={work.title}
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="absolute bottom-4 left-4"
+                    layoutId={`title-container-${idx}`}
+                  >
+                    <span className="text-white text-xs">{work.category}</span>
+                    <h2 className="text-2xl font-serif font-bold text-white drop-shadow">
+                      {work.title}
+                    </h2>
+                  </motion.div>
+                </motion.div>
+              ))}
 
-            <Card>
-              <h4 className="text-xl font-bold font-serif">
-                App whitelabel de clubes de futebol
-              </h4>
-              <span className="text-xs text-zinc-500">4all</span>
-              <p className="text-sm pt-2 leading-tight"></p>
-            </Card>
 
-            <Card>
-              <h4 className="text-xl font-bold font-serif">
-                SaaS B2B de entrega de panfletos
-              </h4>
-              <span className="text-xs text-zinc-500">Oppizi</span>
-              <p className="text-sm pt-2 leading-tight"></p>
-            </Card>
+              {/*
+              <Card onClick={() => setContent({})}>
+                <h4 className="text-xl font-bold font-serif">
+                  App whitelabel de clubes de futebol
+                </h4>
+                <span className="text-xs text-zinc-500">4all</span>
+                <p className="text-sm pt-2 leading-tight"></p>
+              </Card>
 
-            <Card>
-              <h4 className="text-xl font-bold font-serif">
-                App de apoio psicologico a estudantes americanos
-              </h4>
-              <span className="text-xs text-zinc-500">Closegap</span>
-              <p className="text-sm pt-2 leading-tight"></p>
-            </Card>
+              <Card onClick={() => setContent({})}>
+                <h4 className="text-xl font-bold font-serif">
+                  SaaS B2B de entrega de panfletos
+                </h4>
+                <span className="text-xs text-zinc-500">Oppizi</span>
+                <p className="text-sm pt-2 leading-tight"></p>
+              </Card>
 
-            <Card>
-              <h4 className="text-xl font-bold font-serif">
-                App de apoio e serviços aos clientes
-              </h4>
-              <span className="text-xs text-zinc-500">Cortel</span>
-              <p className="text-sm pt-2 leading-tight"></p>
-            </Card>
-          </div>
+              <Card onClick={() => setContent({})}>
+                <h4 className="text-xl font-bold font-serif">
+                  App de apoio psicologico a estudantes americanos
+                </h4>
+                <span className="text-xs text-zinc-500">Closegap</span>
+                <p className="text-sm pt-2 leading-tight"></p>
+              </Card>
+
+              <Card onClick={() => setContent({})}>
+                <h4 className="text-xl font-bold font-serif">
+                  App de apoio e serviços aos clientes
+                </h4>
+                <span className="text-xs text-zinc-500">Cortel</span>
+                <p className="text-sm pt-2 leading-tight"></p>
+              </Card>
+              */}
+            </div>
+
+            {typeof contentId !== "undefined" && (
+              <Expandable
+                id={contentId.toString()}
+                src={works[contentId].src}
+                title={works[contentId].title}
+                category={works[contentId].category}
+                onClose={() => setContentId(undefined)}
+              >
+                {works[contentId].children}
+              </Expandable>
+            )}
+          </AnimatePresence>
         </main>
       </div>
       <footer className="w-full mt-20 mb-8 rounded-lg sm:rounded-full bg-zinc-900 py-6 px-4 sm:px-12 text-white flex flex-col sm:flex-row items-center gap-6">
