@@ -11,9 +11,9 @@ const works = [
   {
     title: "Marketplace de venda de ingressos integrados",
     category: "Confidencial (NDA)",
-    src: "/avatar.jpg",
+    src: "/work-tickets.jpg",
     children: (
-      <p className="text-sm pt-2 leading-relaxed">
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
         Desenvolvimento de um marketplace robusto e altamente integrado,
         projetado para conectar bancos a empresas de venda de ingressos, como
         ticketeiras, clubes, teatros e empresas de eventos. O grande diferencial
@@ -22,6 +22,93 @@ const works = [
         sair do ambiente do canal de venda. Com uma integração perfeita e
         operação em segundo plano, o sistema oferecia alta performance e
         confiabilidade, maximizando a eficiência dos processos de venda.
+      </p>
+    ),
+  },
+  {
+    title: "App whitelabel de clubes de futebol",
+    category: "4all",
+    src: "/work-ground.jpg",
+    children: (
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
+        Desenvolvimento de um aplicativo modular whitelabel de alto desempenho
+        para clubes de futebol, concluído em apenas 2 meses. O projeto enfrentou
+        o desafio de um prazo curto e o uso de uma tecnologia emergente (menos
+        de 2 anos), destacando-se pela customização avançada e reutilização de
+        código. Seu diferencial foi a ativação e desativação de módulos
+        on-demand, adaptando-se rapidamente às necessidades dos clubes. Atendeu
+        com sucesso 10 dos maiores clubes do Brasil, incluindo Grêmio,
+        Internacional, Flamengo e Corinthians, e impulsionou a criação de uma
+        startup focada em soluções para clubes esportivos.
+      </p>
+    ),
+  },
+  {
+    title: "SaaS B2B2C de entrega de panfletos",
+    category: "Oppizi",
+    src: "/work-oppizi.jpg",
+    children: (
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
+        Desenvolvimento e operação de uma plataforma B2B2C (app e web) para
+        entrega de panfletos por profissionais autônomos, com grande adesão no
+        Reino Unido e Austrália. A solução oferece uma oportunidade de trabalho
+        freelancer como entregadores, ao mesmo tempo em que reduz
+        significativamente os custos de propaganda para empresas. O principal
+        diferencial da plataforma é seu sistema avançado de geolocalização,
+        projetado para garantir a veracidade das entregas, evitando fraudes e
+        assegurando que os panfletos sejam distribuídos corretamente.
+      </p>
+    ),
+  },
+  {
+    title: "App de apoio psicologico a estudantes americanos",
+    category: "Closegap",
+    src: "https://placehold.co/600x400/222/FFF",
+    children: (
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
+        Desenvolvimento de um webapp voltado para suporte em tempo real à saúde
+        mental de estudantes, com foco nas séries iniciais. Com uma dinâmica de
+        gamificação, o app utiliza técnicas avançadas para identificação precoce
+        de problemas, intervenções e gestão de crises. O projeto foi concluído
+        em um prazo agressivo de 30 dias para o MVP, atendendo ao desafio de
+        criar uma plataforma simples e acessível para crianças a partir de 5
+        anos, sem perder a profundidade e a base científica exigida.
+      </p>
+    ),
+  },
+  {
+    title: "App de apoio e serviços aos clientes",
+    category: "Grupo Cortel",
+    src: "https://placehold.co/600x400/222/FFF",
+    children: (
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
+        Desenvolvimento de um aplicativo para o Grupo Cortel, o maior
+        conglomerado de funerárias da América Latina, oferecendo suporte
+        completo aos clientes. O app permite localizar jazigos pelo nome do
+        falecido, transmitir velórios em vídeo e inclui um e-commerce para a
+        compra de flores e acessórios de homenagens. O principal desafio foi
+        equilibrar inovação e dinamismo com a sensibilidade exigida pelo setor,
+        entregando uma solução funcional e empática que atendesse às
+        necessidades dos usuários em momentos delicados.
+      </p>
+    ),
+  },
+  {
+    title:
+      "Planejamento e execução de migração de software e infraestrutura legada",
+    category: "Confidencial (NDA)",
+    src: "/work-devops.jpg",
+    children: (
+      <p className="text-xs sm:text-sm pt-2 leading-relaxed">
+        Planejamento, execução e gestão da migração de um software legado para
+        uma arquitetura de microsserviços, além da transição de servidores
+        on-premises para a AWS. O grande desafio desse projeto foi a ausência de
+        uma equipe especializada em cloud e migração, o que exigiu não apenas a
+        implementação técnica, mas também o treinamento da equipe interna. O
+        resultado foi uma transformação digital bem-sucedida, com a criação de
+        um fluxo contínuo de desenvolvimento e a capacitação da equipe,
+        posicionando a empresa para uma operação mais eficiente e escalável no
+        ambiente de nuvem.
       </p>
     ),
   },
@@ -163,66 +250,34 @@ function App() {
             <div className="grid grid-cols-1 gap-4">
               {works.map((work, idx) => (
                 <motion.div
-                  className="relative overflow-hidden rounded-xl border"
+                  className="relative overflow-hidden rounded-xl border cursor-pointer"
                   layoutId={`card-container-${idx}`}
                   onClick={() => setContentId(idx)}
                 >
                   <motion.div
-                    className="card-image-container relative hover:scale-110"
+                    className="card-image-container relative"
                     layoutId={`card-image-container-${idx}`}
                   >
                     <img
-                      className="aspect-square object-fit"
+                      className="aspect-video object-cover transition-all duration-500 hover:scale-125 hover:rotate-6"
                       src={work.src}
                       alt={work.title}
                     />
                   </motion.div>
                   <motion.div
-                    className="absolute bottom-4 left-4"
+                    className="absolute bottom-4 left-4 pr-2"
                     layoutId={`title-container-${idx}`}
                   >
                     <span className="text-white text-xs">{work.category}</span>
-                    <h2 className="text-2xl font-serif font-bold text-white drop-shadow">
+                    <h2
+                      className="text-xl md:text-2xl font-serif font-bold text-white drop-shadow"
+                      style={{ textShadow: "0 0 4px #000" }}
+                    >
                       {work.title}
                     </h2>
                   </motion.div>
                 </motion.div>
               ))}
-
-
-              {/*
-              <Card onClick={() => setContent({})}>
-                <h4 className="text-xl font-bold font-serif">
-                  App whitelabel de clubes de futebol
-                </h4>
-                <span className="text-xs text-zinc-500">4all</span>
-                <p className="text-sm pt-2 leading-tight"></p>
-              </Card>
-
-              <Card onClick={() => setContent({})}>
-                <h4 className="text-xl font-bold font-serif">
-                  SaaS B2B de entrega de panfletos
-                </h4>
-                <span className="text-xs text-zinc-500">Oppizi</span>
-                <p className="text-sm pt-2 leading-tight"></p>
-              </Card>
-
-              <Card onClick={() => setContent({})}>
-                <h4 className="text-xl font-bold font-serif">
-                  App de apoio psicologico a estudantes americanos
-                </h4>
-                <span className="text-xs text-zinc-500">Closegap</span>
-                <p className="text-sm pt-2 leading-tight"></p>
-              </Card>
-
-              <Card onClick={() => setContent({})}>
-                <h4 className="text-xl font-bold font-serif">
-                  App de apoio e serviços aos clientes
-                </h4>
-                <span className="text-xs text-zinc-500">Cortel</span>
-                <p className="text-sm pt-2 leading-tight"></p>
-              </Card>
-              */}
             </div>
 
             {typeof contentId !== "undefined" && (
