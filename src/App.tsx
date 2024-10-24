@@ -61,9 +61,10 @@ const works = [
     ),
   },
   {
-    title: "App de apoio psicologico a estudantes americanos",
+    title:
+      "App de apoio psicologico a estudantes de ensino fundamental e médio",
     category: "Closegap",
-    src: "https://placehold.co/600x400/222/FFF",
+    src: "/work-closegap.jpg",
     children: (
       <p className="text-xs sm:text-sm pt-2 leading-relaxed">
         Desenvolvimento de um webapp voltado para suporte em tempo real à saúde
@@ -79,11 +80,11 @@ const works = [
   {
     title: "App de apoio e serviços aos clientes",
     category: "Grupo Cortel",
-    src: "https://placehold.co/600x400/222/FFF",
+    src: "/work-cortel.jpg",
     children: (
       <p className="text-xs sm:text-sm pt-2 leading-relaxed">
-        Desenvolvimento de um aplicativo para o Grupo Cortel, o maior
-        conglomerado de funerárias da América Latina, oferecendo suporte
+        Desenvolvimento de um aplicativo para o Grupo Cortel, um dos maiores
+        conglomerados de funerárias da América Latina, oferecendo suporte
         completo aos clientes. O app permite localizar jazigos pelo nome do
         falecido, transmitir velórios em vídeo e inclui um e-commerce para a
         compra de flores e acessórios de homenagens. O principal desafio foi
